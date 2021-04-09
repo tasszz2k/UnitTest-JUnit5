@@ -39,22 +39,29 @@ class DietPlannerTest {
         System.out.println("A unit test was finished");
     }
 
-
-    @RepeatedTest(value = 10, name = RepeatedTest.LONG_DISPLAY_NAME)
+//    @Disabled
+@RepeatedTest(value = 10, name = RepeatedTest.LONG_DISPLAY_NAME)
+@DisplayName(">>> sample method display name")
     void should_ReturnCorrectDietPlan_When_CorrectCoder() {
         // Given
         Coder coder = new Coder(1.82, 75.0, 26, Gender.MALE);
         DietPlan expected = new DietPlan(2202, 110, 73, 275);
 
         // When
-        DietPlan actual = dietPlanner.calculateDiet(coder);
+    DietPlan actual = dietPlanner.calculateDiet(coder);
 
-        // Then
-        assertAll(
-                () -> assertEquals(expected.getCalories(), actual.getCalories()),
-                () -> assertEquals(expected.getProtein(), actual.getProtein()),
-                () -> assertEquals(expected.getCarbohydrate(), actual.getCarbohydrate())
-        );
+    // Then
+    assertAll(
+            () -> assertEquals(expected.getCalories(), actual.getCalories()),
+            () -> assertEquals(expected.getProtein(), actual.getProtein()),
+            () -> assertEquals(expected.getCarbohydrate(), actual.getCarbohydrate())
+    );
+}
+
+    @Nested
+    @DisplayName("{{{}}} Sample inner class display name")
+    class NestedClass {
+        // group unit tests here
     }
 
 
