@@ -1,5 +1,6 @@
 package healthycoderapp;
 
+
 public class Coder {
 	
 	private double height;
@@ -39,10 +40,17 @@ public class Coder {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
 	public Gender getGender() {
 		return gender;
 	}
+
 	public void setGender(Gender gender) {
 		this.gender = gender;
-	}	
+	}
 }
+
+//enum Gender {
+//	MALE, FEMALE
+//}
+
